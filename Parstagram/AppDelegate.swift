@@ -1,19 +1,24 @@
-//
 //  AppDelegate.swift
 //  Parstagram
-//
 //  Created by Rama Deshpande on 2/15/22.
 //
 
+
 import UIKit
+import Parse
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let parseConfig = ParseClientConfiguration {
+                    $0.applicationId = "sCuIL2rDu6n5Zc6GC9udqM5UYoOFCw2M6hu5SaXa" // <- UPDATE
+                    $0.clientKey = "Kl7emIodsZGUAUOTLrhauASu1LFyO4wKhQVh20Gx" // <- UPDATE
+                    $0.server = "https://parseapi.back4app.com"
+            }
+            Parse.initialize(with: parseConfig)
+        
         return true
     }
 
